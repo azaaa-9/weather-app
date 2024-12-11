@@ -1,27 +1,43 @@
 "use client"
-import { SearchIcon } from "./componant/searchIcon";
+
 import Image from "next/image";
+import { Location } from "./componant/location";
 
 export default function Home() {
   return (
 
 
-  <div className="w-full h-screen flex bg-(#404040) justify-around py-40 bg-auto">
+  <div className="w-full h-screen flex  ">
 
 
-    <div className="w-[20%] h-[800px] bg-stone-50 rounded-xl italic text-black flex items-start"> 
+    <div className="w-[50%] h-[800px]  bg-[#F3F4F6] rounded-xl italic text-black "> 
 
-    <SearchIcon/>
-    <input
-      type="text"
-      placeholder="Search City..."
-      class="w-full px-4 py-2 pr-12 text-sm border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:border-cyan-300"
-    />
+    <div className="  p-2 rounded-lg">
+
+  <input type="text" placeholder="Search..." class="border-none outline-none p-2 w-64 rounded-lg" />
+  
+
+  <button className="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 focus:outline-none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 18a7 7 0 100-14 7 7 0 000 14zM21 21l-4.35-4.35" />
+    </svg>
+  </button>
+</div>
+<div className="w-[300px] h-[500px] bg-slate-300 justify-around rounded-xl">
+<Location/>
+  <h1>Krakow</h1>
+  <img className="" src="icon.png"/>
+</div>
 
     </div>
 
 
-    <div className="w-[20%] h-[800px] bg-slate-900 rounded-xl">asfasfas</div>
+
+
+
+    <div className="w-[50%] h-[800px] bg-[#0F141E] rounded-xl"></div>
+
+
   </div>
   );
 }
