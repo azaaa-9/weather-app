@@ -39,12 +39,13 @@ export default function Home() {
   return (
     <div className="bg-black h-screen">
       <div className="bg-[#f3f4f6] h-[1200px] w-[1600px] flex justify-between mx-auto">
-        <div className="bg-[#f3f4f6] h-[1200px] w-[800px] relative">
+        <div className="bg-[#f3f4f6] h-[1200px] w-[800px] relative ">
+        <div className='w-[200px] h-[200px] rounded-[50%] bg-yellow-400 absolute right-[500px] top-[130px]'></div>
           <Card value='day' />
 
-          <div className="z-10 w-[200px] h-[200px] bg-[#f3f4f6] rounded-[50%] absolute left-[700px] top-[500px] flex ">
-            <img className="w-[43px] h-[86px] ml-[50px] my-[50px]" src="/left.png" />
-            <img className="w-[43px] h-[86px] ml-[50px] my-[50px]" src="/right.png" />
+          <div className="z-10 w-[205px] h-[205px] bg-[#f3f4f6] rounded-[50%] absolute left-[703px] top-[498px] flex">
+            <img className="w-[40px] h-[86px] ml-[45px] my-[50px]" src="/left.png" />
+            <img className="w-[40px] h-[86px] ml-[45px] my-[50px]" src="/right.png" />
           </div>
 
           <div className="ml-20 flex px-4 py-3 rounded-md border-2 hover:border-white overflow-hidden max-w-md mx-auto font-[sans-serif]">
@@ -80,8 +81,9 @@ export default function Home() {
         <div className="relative">
         <Card value='night'/>
           <div className="w-[800px] h-[500px] bg-[#0f141e] rounded-bl-[25px]"></div>
-          <div className="w-[800px] h-[200px] bg-[#0f141e] "></div>
+          <div className="w-[800px] h-[200px] bg-[#0f141e]"></div>
           <div className="w-[800px] h-[500px] bg-[#0f141e] rounded-tl-[25px]"></div>
+          <div className='w-[200px] h-[200px] rounded-[50%] bg-indigo-400 absolute left-[570px] bottom-[50px]'></div>
         </div>
       </div>
     </div>
