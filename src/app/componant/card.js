@@ -29,7 +29,6 @@ const Card = ({ value, weatherData }) => {
           <p>{new Date().toLocaleDateString()}</p> 
           <p className="text-6xl">{weatherData ? weatherData.name : "mongolia"}</p> 
         </div>
-
         <Location />
       </div>
 
@@ -44,7 +43,7 @@ const Card = ({ value, weatherData }) => {
         <p className="font-extrabold text-[24px]">{displayCondition}</p>
       </div>
 
-      
+
  <div className={`flex gap-6 text-3xl justify-around mt-auto space-x-3 ${iconColor} opacity-60`}>
  <i className="fa-solid fa-house"></i>
  <i className="fa-solid fa-location-dot"></i>
