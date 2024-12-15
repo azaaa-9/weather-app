@@ -2,7 +2,6 @@
 
 import { useState, useEffect} from "react";
 import { Card } from "./componant/card";
-import { SearchIcon } from "./componant/SearchIcon";
 import { Circle } from "./componant/circle";
 import { CircleGray } from "./componant/circle";
 import { SearchInput } from "./componant/SearchInput";
@@ -46,17 +45,18 @@ export default function Home() {
   }, [city]);
 
   return (
-    <div className="bg-black h-screen">
-      <div className="bg-[#f3f4f6] h-[1200px] w-[1600px] flex justify-between mx-auto">
-        <div className="bg-[#f3f4f6] h-[1200px] w-[800px] relative ">
-          <div className='w-[200px] h-[200px] rounded-[50%] bg-yellow-400 absolute right-[500px] top-[130px]'></div>
+
+    <div className="bg-black min-h-screen">
+      <div className="bg-[#f3f4f6] w-full md:w-[1600px] h-auto flex justify-between mx-auto">
+        <div className="bg-[#f3f4f6] w-full md:w-[800px] relative ">
+          <div className='w-[200px] h-[200px] rounded-[50%] bg-yellow-400 absolute right-[610px] top-[130px] translate-x-[50%]'></div>
 
           <Card value="day"
           city={city}
           number={dayweather.number}
           condition={dayweather.condition} />
 
-          <div className="z-10 w-[205px] h-[205px] bg-[#f3f4f6] rounded-[50%] absolute left-[703px] top-[498px] flex">
+          <div className="z-10 w-[205px] h-[205px] bg-[#f3f4f6] rounded-[50%] absolute left-[700px] top-[498px] flex">
             <img className="w-[40px] h-[86px] ml-[45px] my-[50px]" src="/left.png" />
             <img className="w-[40px] h-[86px] ml-[45px] my-[50px]" src="/right.png" />
           </div>
@@ -68,6 +68,7 @@ export default function Home() {
         </div>
 
         <div className="relative">
+          
 
         <Circle size={340} top={420} left={-160} />
         <CircleGray size={340} top={420} left={-160} />
@@ -84,13 +85,15 @@ export default function Home() {
          
           <Card value="night"
           city={city}
-          number={nightweather.number}
-          condition={nightweather.condition}/>
+          number={nightweather.nothing}
+          condition={nightweather.condition} /> 
+          
+          
 
-          <div className="w-[800px] h-[500px] bg-[#0f141e] rounded-bl-[25px]"></div>
-          <div className="w-[800px] h-[200px] bg-[#0f141e]"></div>
-          <div className="w-[800px] h-[500px] bg-[#0f141e] rounded-tl-[25px]"></div>
-          <div className='w-[200px] h-[200px] rounded-[50%] bg-indigo-400 absolute left-[570px] bottom-[50px]'></div>
+          <div className="w-full md:w-[800px] h-[500px] bg-[#0f141e] rounded-bl-[25px]"></div>
+          <div className="w-full md:w-[800px] h-[200px] bg-[#0f141e]"></div>
+          <div className="w-full md:w-[800px] h-[500px] bg-[#0f141e] rounded-tl-[25px]"></div>
+          <div className='w-full md:w-[200px] h-[200px] rounded-[50%] bg-indigo-400 absolute left-[640px] bottom-[30px] transform -translate-x-[50%]'></div>
         </div>
       </div>
     </div>

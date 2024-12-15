@@ -6,21 +6,26 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 const Card = ({ value, city, number, nothing, condition  }) => {
+
   const img = value === "day" ? "rain.png" : "rain (1).png"; 
-  const nightCardColors =
-    "bg-[111827bf] bg-gradient-to-b from-[#1F2937] to-[#11182700] text-white shadow-[#111827]";
+
+  const nightCardColors ="bg-[111827bf] bg-gradient-to-b from-[#1F2937] to-[#11182700] text-white shadow-[#111827]";
   const colors = value === "day" ? "bg-[#ffffff] text-black" : nightCardColors;
+
   const nightIconColor = "text-white";
+
   const iconColor = value === "day" ? "text-black" : nightIconColor;
+
   const temperature = value ==="day" ? number : nothing;
-  const temperatureStyle = value === "day" ? "text-[96px] text-transparent bg-clip-text bg-gradient-to-b from-[#111827] to-[#6b7280] " : "text-[96px] text-transparent bg-clip-text bg-gradient-to-b from-[#f9fafb] to-[#6b7280]"
+  const temperatureStyle = value === "day" ? "text-[96px] text-transparent bg-clip-text bg-gradient-to-b from-[#111827] to-[#6b7280] " : "text-[96px] text-transparent bg-clip-text bg-gradient-to-b from-[#f9fafb] to-[#f9fafb]"
+
 const textStyle = value === "day" ? "text-[#ff8e27] text-[24px]" : "text-[#777cce] text-[24px]"
 
   
 
 
   return (
-    <div className={`w-[490px] h-[880px] absolute left-[193px] top-[216px] drop-shadow-xl rounded-[60px] z-10 ${colors} space-y-20`}>
+    <div className={` w-full md:w-[490px] h-[880px] absolute left-[50%] top-[216px] drop-shadow-xl rounded-[60px] z-10 ${colors} space-y-20 transform -translate-x-[50%]`}>
 
       <div className={`font-sans my-1 flex place-content-around mt-[30px]`}>
         <div>
