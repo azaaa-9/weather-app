@@ -44,11 +44,12 @@ export default function Home() {
         });
         setNightWeather({
           nothing: data?.forecast?.forecastday[0]?.day?.mintemp_c,
-          condition : data?.forecast?.forecastday[0]?.day?.condition.text,
+          nightCondition : data?.forecast?.forecastday[0]?.hour[0]?.condition?.text,
         });
       });  
    
   }, [city]);
+  
   return (
 
     <div className="bg-black min-h-screen">
@@ -91,14 +92,16 @@ export default function Home() {
           <Card value="night"
           city={city}
           nothing={nightweather.nothing}
-          condition={nightweather.condition} /> 
+          nightConditions={nightweather.nightCondition}
+
+           /> 
           
           
 
           <div className="w-full md:w-[800px] h-[500px] bg-[#0f141e] rounded-bl-[25px]"></div>
           <div className="w-full md:w-[800px] h-[200px] bg-[#0f141e]"></div>
           <div className="w-full md:w-[800px] h-[500px] bg-[#0f141e] rounded-tl-[25px]"></div>
-          <div className='w-full md:w-[200px] h-[200px] rounded-[50%] bg-[#6E72C9l] absolute left-[640px] bottom-[30px] transform -translate-x-[50%]'></div>
+          <div className='w-full md:w-[200px] h-[200px] rounded-[50%] bg-[#6E72C9] absolute left-[430px] bottom-[30px] translate-x-[50%]'></div>
         </div>
       </div>
     </div>

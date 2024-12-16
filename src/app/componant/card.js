@@ -5,7 +5,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import Image from "next/image";
 
 
-const Card = ({ value, city, number, nothing, condition, }) => {
+const Card = ({ value, city, number, nothing, condition, nightConditions }) => {
 
   const img = value == "day" ? "/sunnyPic.png" : "/rain1.png"; 
 
@@ -18,16 +18,16 @@ const Card = ({ value, city, number, nothing, condition, }) => {
   const temperature = value ==="day" ? number : nothing;
   const temperatureStyle = value === "day" ? "text-[96px] text-transparent bg-clip-text bg-gradient-to-b from-[#111827] to-[#6b7280] " : "text-[96px] text-transparent bg-clip-text bg-gradient-to-b from-[#f9fafb] to-[#f9fafb]"
 
-
+const conditions = value === "day" ? condition : nightConditions;
 const textStyle = value === "day" ? "text-[#ff8e27] text-[24px]" : "text-[#777cce] text-[24px]"
 
-  
+console.log(nightConditions)
 
 
   return (
-    <div className={` w-full md:w-[490px] h-[880px] absolute left-[50%] top-[216px] drop-shadow-xl rounded-[60px] z-10 ${colors} space-y-20 transform -translate-x-[50%]`}>
+    <div className={` w-full md:w-[490px] h-[880px] absolute left-[50%] top-[216px] drop-shadow-xl rounded-[60px] z-[100] ${colors} space-y-20 transform -translate-x-[50%]`}>
 
-      <div className={`font-sans my-1 flex place-content-around mt-[30px]`}>
+      <div className={`font-sans my-1 flex place-content-around mt-[30px] z-10 `}>
         <div>
           <p className="text-2xl">{new Date().toLocaleDateString()}</p> 
           <h1 className="text-6xl">{city}</h1>
@@ -35,15 +35,15 @@ const textStyle = value === "day" ? "text-[#ff8e27] text-[24px]" : "text-[#777cc
         <Location />
       </div>
 
-      <div className="flex flex-col items-center">
-        <Image width={274} height={274} className="w-[274px] h-[274px] top-[204px]" src={img} alt="weather icon" />
+      <div className="flex flex-col items-center z-10 ">
+        <Image width={274} height={274} className="w-[274px] h-[274px] top-[204px] drop-shadow-[0_15px_45px_rgba(255,255,255,0.3)]" src={img} alt="weather icon" />
       </div>
 
       <div className="ml-[48px] mt-1">
         <div className="font-extrabold text-[100px] leading-[144px] text-transparent bg-clip-text  bg-gradient-to-b from-[#111827] to-[#6B7280]">
           <p className={temperatureStyle} > {temperature}°C</p>
         </div>
-        <p className={textStyle}>{condition}</p>
+        <p className={textStyle}>{conditions}</p>
       </div>
 
 
