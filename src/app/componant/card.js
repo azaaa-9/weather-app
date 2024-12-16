@@ -5,7 +5,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 
-const Card = ({ value, city, number, nothing, condition  }) => {
+const Card = ({ value, city, number, nothing, condition, }) => {
 
   const img = value === "day" ? "rain.png" : "rain (1).png"; 
 
@@ -13,11 +13,11 @@ const Card = ({ value, city, number, nothing, condition  }) => {
   const colors = value === "day" ? "bg-[#ffffff] text-black" : nightCardColors;
 
   const nightIconColor = "text-white";
-
   const iconColor = value === "day" ? "text-black" : nightIconColor;
 
   const temperature = value ==="day" ? number : nothing;
   const temperatureStyle = value === "day" ? "text-[96px] text-transparent bg-clip-text bg-gradient-to-b from-[#111827] to-[#6b7280] " : "text-[96px] text-transparent bg-clip-text bg-gradient-to-b from-[#f9fafb] to-[#f9fafb]"
+
 
 const textStyle = value === "day" ? "text-[#ff8e27] text-[24px]" : "text-[#777cce] text-[24px]"
 

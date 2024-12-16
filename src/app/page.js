@@ -14,10 +14,13 @@ export default function Home() {
     number: 0,
     condition: "",
   });
+
   const [nightweather, setNightWeather] = useState({
     nothing: 0,
-    condition: "",
+    nightCondition: "",
   });
+
+
   const onChangeText = (e) => {
     setSearch(e.target.value);
   };
@@ -27,29 +30,31 @@ export default function Home() {
       setCity(search);
     }
   };
+
+
   useEffect(() => {
     fetch(
       `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=1&aqi=no&alerts=no`
     )
       .then((response) => response.json())
-      .then((data) => {
+      .then((data) => { 
         setDayWeather({
           number: data?.forecast?.forecastday[0]?.day?.maxtemp_c,
           condition: data?.forecast?.forecastday[0]?.day?.condition?.text,
         });
         setNightWeather({
           nothing: data?.forecast?.forecastday[0]?.day?.mintemp_c,
-          condition: data?.forecast?.forecastday[0]?.day?.condition.text,
+          condition : data?.forecast?.forecastday[0]?.day?.condition.text,
         });
-      });
+      });  
+   
   }, [city]);
-
   return (
 
     <div className="bg-black min-h-screen">
       <div className="bg-[#f3f4f6] w-full md:w-[1600px] h-auto flex justify-between mx-auto">
         <div className="bg-[#f3f4f6] w-full md:w-[800px] relative ">
-          <div className='w-[200px] h-[200px] rounded-[50%] bg-yellow-400 absolute right-[610px] top-[130px] translate-x-[50%]'></div>
+          <div className='w-[200px] h-[200px] rounded-[50%] bg-[#FF8E27] absolute right-[610px] top-[130px] translate-x-[50%]'></div>
 
           <Card value="day"
           city={city}
@@ -85,7 +90,7 @@ export default function Home() {
          
           <Card value="night"
           city={city}
-          number={nightweather.nothing}
+          nothing={nightweather.nothing}
           condition={nightweather.condition} /> 
           
           
@@ -93,7 +98,7 @@ export default function Home() {
           <div className="w-full md:w-[800px] h-[500px] bg-[#0f141e] rounded-bl-[25px]"></div>
           <div className="w-full md:w-[800px] h-[200px] bg-[#0f141e]"></div>
           <div className="w-full md:w-[800px] h-[500px] bg-[#0f141e] rounded-tl-[25px]"></div>
-          <div className='w-full md:w-[200px] h-[200px] rounded-[50%] bg-indigo-400 absolute left-[640px] bottom-[30px] transform -translate-x-[50%]'></div>
+          <div className='w-full md:w-[200px] h-[200px] rounded-[50%] bg-[#6E72C9] absolute left-[640px] bottom-[30px] transform -translate-x-[50%]'></div>
         </div>
       </div>
     </div>
