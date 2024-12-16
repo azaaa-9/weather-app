@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Card = ({ value, city, number, nothing, condition, }) => {
 
-  const img = value === "day" ? "/rain.png" : "/rain1.png"; 
+  const img = value == "day" ? "/sunnyPic.png" : "/rain1.png"; 
 
   const nightCardColors ="bg-[111827bf] bg-gradient-to-b from-[#1F2937] to-[#11182700] text-white shadow-[#111827]";
   const colors = value === "day" ? "bg-[#ffffff] text-black" : nightCardColors;
