@@ -34,7 +34,7 @@ export default function Home() {
 
   useEffect(() => {
     fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=1&aqi=no&alerts=no`
+      `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=1&aqi=no&alerts=no`
     )
       .then((response) => response.json())
       .then((data) => { 
@@ -98,7 +98,7 @@ export default function Home() {
           <div className="w-full md:w-[800px] h-[500px] bg-[#0f141e] rounded-bl-[25px]"></div>
           <div className="w-full md:w-[800px] h-[200px] bg-[#0f141e]"></div>
           <div className="w-full md:w-[800px] h-[500px] bg-[#0f141e] rounded-tl-[25px]"></div>
-          <div className='w-full md:w-[200px] h-[200px] rounded-[50%] bg-[#6E72C9] absolute left-[640px] bottom-[30px] transform -translate-x-[50%]'></div>
+          <div className='w-full md:w-[200px] h-[200px] rounded-[50%] bg-[#6E72C9l] absolute left-[640px] bottom-[30px] transform -translate-x-[50%]'></div>
         </div>
       </div>
     </div>
