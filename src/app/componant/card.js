@@ -44,7 +44,7 @@ const Card = ({ value, city, number, nothing, condition = "", nightConditions = 
       }
     } else {
       if (conditions.includes("Clear")) {
-        imageNight = ("/Moon.png");
+        imageNight = ("/moon.png");
       } else if (conditions.includes("Overcast")) {
 
         console.log(conditions, '----');
@@ -56,7 +56,7 @@ const Card = ({ value, city, number, nothing, condition = "", nightConditions = 
       } else if (conditions.includes("rain")) {
         imageNight = ("/NightRain.png");
       } else if (conditions.includes("thunder")) {
-        imageNight = ("/light (2).png");
+        imageNight = ("/light (2.png");
       } else if (conditions.includes("wind")) {
         imageNight = ("/NightWind.png");
       } else if (conditions.includes("Cloudy")) {
