@@ -20,15 +20,15 @@ const Card = ({ value, city, number, nothing, condition = "", nightConditions = 
   const conditions = value === "day" ? condition.trim() : nightConditions.trim();
   const textStyle = value === "day" ? "text-[#ff8e27] text-[24px]" : "text-[#777cce] text-[24px]";
 
-  let image = "/Sun.png"
+  let image = "/SUN.png"
   let imageNight = "/moon.png"
 
 
     if (value === "day") {
       if (conditions.includes("Sunny")) {
-        image = ("/Sun.png");
+        image = ("/SUN.png");
       } else if (conditions.includes("Overcast")) {
-        image = ("/Cloud.png");
+        image = ("/cloud.png");
       } else if (conditions.includes("snow")) {
         image = ("/Snow.png");
       } else if (conditions.includes("rain")) {
@@ -38,9 +38,9 @@ const Card = ({ value, city, number, nothing, condition = "", nightConditions = 
       } else if (conditions.includes("wind")) {
         image = ("/Wind.png");
       } else if (conditions.includes("Mist")) {
-        image = ("/Cloud.png");
+        image = ("/cloud.png");
       } else if (conditions.includes("Cloudy")) {
-        image = ("/Cloud.png");
+        image = ("/cloud.png");
       }
     } else {
       if (conditions.includes("Clear")) {
