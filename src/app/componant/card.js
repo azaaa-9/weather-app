@@ -2,7 +2,7 @@
 
 import { Location } from "./location"
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
+import Image from "next/image";
 
 
 const Card = ({ value, city, number, nothing, condition, }) => {
@@ -36,7 +36,7 @@ const textStyle = value === "day" ? "text-[#ff8e27] text-[24px]" : "text-[#777cc
       </div>
 
       <div className="flex flex-col items-center">
-        <img className="w-[274px] h-[274px] top-[204px]" src={img} alt="weather icon" />
+        <Image width={274} height={274} className="w-[274px] h-[274px] top-[204px]" src={img} alt="weather icon" />
       </div>
 
       <div className="ml-[48px] mt-1">
